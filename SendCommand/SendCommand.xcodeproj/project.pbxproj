@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB520C4F23D20E6E00B47770 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB520C4E23D20E6E00B47770 /* AppDelegate.swift */; };
+		CB520C5323D20E6E00B47770 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB520C5223D20E6E00B47770 /* ViewController.swift */; };
+		CB520C5623D20E6E00B47770 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB520C5423D20E6E00B47770 /* Main.storyboard */; };
+		CB520C5823D20E6F00B47770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB520C5723D20E6F00B47770 /* Assets.xcassets */; };
+		CB520C5B23D20E6F00B47770 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB520C5923D20E6F00B47770 /* LaunchScreen.storyboard */; };
+		CB520C6323D212CE00B47770 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB520C6223D212CE00B47770 /* ExternalAccessory.framework */; };
 		CBF50C6E23D201D6008B5D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF50C6D23D201D6008B5D55 /* AppDelegate.swift */; };
 		CBF50C7023D201D6008B5D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF50C6F23D201D6008B5D55 /* ViewController.swift */; };
 		CBF50C7223D201D7008B5D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF50C7123D201D7008B5D55 /* Assets.xcassets */; };
@@ -14,6 +20,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB520C4C23D20E6E00B47770 /* SendCommand-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SendCommand-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB520C4E23D20E6E00B47770 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB520C5223D20E6E00B47770 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB520C5523D20E6E00B47770 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB520C5723D20E6F00B47770 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB520C5A23D20E6F00B47770 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB520C5C23D20E6F00B47770 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB520C6223D212CE00B47770 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/ExternalAccessory.framework; sourceTree = DEVELOPER_DIR; };
 		CBF50C6A23D201D6008B5D55 /* SendCommand-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SendCommand-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF50C6D23D201D6008B5D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBF50C6F23D201D6008B5D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +38,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB520C4923D20E6E00B47770 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB520C6323D212CE00B47770 /* ExternalAccessory.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBF50C6723D201D6008B5D55 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,11 +56,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB520C4D23D20E6E00B47770 /* SendCommand-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB520C4E23D20E6E00B47770 /* AppDelegate.swift */,
+				CB520C5223D20E6E00B47770 /* ViewController.swift */,
+				CB520C5423D20E6E00B47770 /* Main.storyboard */,
+				CB520C5723D20E6F00B47770 /* Assets.xcassets */,
+				CB520C5923D20E6F00B47770 /* LaunchScreen.storyboard */,
+				CB520C5C23D20E6F00B47770 /* Info.plist */,
+			);
+			path = "SendCommand-iOS";
+			sourceTree = "<group>";
+		};
+		CB520C6123D212CE00B47770 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB520C6223D212CE00B47770 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CBF50C5F23D2018F008B5D55 = {
 			isa = PBXGroup;
 			children = (
 				CBF50C6C23D201D6008B5D55 /* SendCommand-macOS */,
+				CB520C4D23D20E6E00B47770 /* SendCommand-iOS */,
 				CBF50C6B23D201D6008B5D55 /* Products */,
+				CB520C6123D212CE00B47770 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CBF50C6A23D201D6008B5D55 /* SendCommand-macOS.app */,
+				CB520C4C23D20E6E00B47770 /* SendCommand-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +112,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB520C4B23D20E6E00B47770 /* SendCommand-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB520C5F23D20E6F00B47770 /* Build configuration list for PBXNativeTarget "SendCommand-iOS" */;
+			buildPhases = (
+				CB520C4823D20E6E00B47770 /* Sources */,
+				CB520C4923D20E6E00B47770 /* Frameworks */,
+				CB520C4A23D20E6E00B47770 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SendCommand-iOS";
+			productName = "SendCommand-iOS";
+			productReference = CB520C4C23D20E6E00B47770 /* SendCommand-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CBF50C6923D201D6008B5D55 /* SendCommand-macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBF50C7A23D201D7008B5D55 /* Build configuration list for PBXNativeTarget "SendCommand-macOS" */;
@@ -92,6 +155,9 @@
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
+					CB520C4B23D20E6E00B47770 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					CBF50C6923D201D6008B5D55 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -111,11 +177,22 @@
 			projectRoot = "";
 			targets = (
 				CBF50C6923D201D6008B5D55 /* SendCommand-macOS */,
+				CB520C4B23D20E6E00B47770 /* SendCommand-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CB520C4A23D20E6E00B47770 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB520C5B23D20E6F00B47770 /* LaunchScreen.storyboard in Resources */,
+				CB520C5823D20E6F00B47770 /* Assets.xcassets in Resources */,
+				CB520C5623D20E6E00B47770 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBF50C6823D201D6008B5D55 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +205,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB520C4823D20E6E00B47770 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB520C5323D20E6E00B47770 /* ViewController.swift in Sources */,
+				CB520C4F23D20E6E00B47770 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBF50C6623D201D6008B5D55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +226,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CB520C5423D20E6E00B47770 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB520C5523D20E6E00B47770 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB520C5923D20E6F00B47770 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB520C5A23D20E6F00B47770 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		CBF50C7323D201D7008B5D55 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -151,6 +253,144 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CB520C5D23D20E6F00B47770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UV6TAX3ANB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "SendCommand-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bricklife.SendCommand-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB520C5E23D20E6F00B47770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UV6TAX3ANB;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "SendCommand-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bricklife.SendCommand-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		CBF50C6423D2018F008B5D55 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -307,6 +547,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB520C5F23D20E6F00B47770 /* Build configuration list for PBXNativeTarget "SendCommand-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB520C5D23D20E6F00B47770 /* Debug */,
+				CB520C5E23D20E6F00B47770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CBF50C6323D2018F008B5D55 /* Build configuration list for PBXProject "SendCommand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
