@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6F3-bd-HVc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,33 +17,90 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVL-MW-9Oi">
-                                <rect key="frame" x="132.5" y="433" width="149" height="30"/>
-                                <state key="normal" title="Open Device Selector"/>
+                                <rect key="frame" x="177.5" y="108" width="59" height="30"/>
+                                <state key="normal" title="Connect"/>
                                 <connections>
                                     <action selector="openButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3oL-pm-gSv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DI-BN-ck5">
-                                <rect key="frame" x="172" y="503" width="70" height="30"/>
-                                <state key="normal" title="Streaming"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c0C-of-mGR">
+                                <rect key="frame" x="133.5" y="158" width="147" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DI-BN-ck5">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                        <state key="normal" title="Streaming"/>
+                                        <connections>
+                                            <action selector="streamingButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6NL-nr-YjH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCi-Xf-hXV">
+                                        <rect key="frame" x="78" y="0.0" width="69" height="30"/>
+                                        <state key="normal" title="Download"/>
+                                        <connections>
+                                            <action selector="downloadButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRq-eg-sS5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="{&quot;i&quot;:&quot;NNNN&quot;,&quot;m&quot;:&quot;scratch.motor_start&quot;,&quot;p&quot;:{&quot;port&quot;:&quot;A&quot;,&quot;speed&quot;:75,&quot;stall&quot;:true}}" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GgS-uH-mN3">
+                                <rect key="frame" x="30" y="208" width="354" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="alO-ww-4Eu"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvk-S3-m4m">
+                                <rect key="frame" x="189" y="296" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
                                 <connections>
-                                    <action selector="streamingButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6NL-nr-YjH"/>
+                                    <action selector="sendButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dFw-mj-2Bd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="wVL-MW-9Oi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L7z-be-bkq"/>
-                            <constraint firstItem="2DI-BN-ck5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zi7-Pn-bY1"/>
+                            <constraint firstItem="GgS-uH-mN3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1o9-jV-k7V"/>
+                            <constraint firstItem="GgS-uH-mN3" firstAttribute="top" secondItem="c0C-of-mGR" secondAttribute="bottom" constant="20" id="3vm-Gb-0Se"/>
+                            <constraint firstItem="wVL-MW-9Oi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="KVm-Bz-Dwt"/>
+                            <constraint firstItem="c0C-of-mGR" firstAttribute="top" secondItem="wVL-MW-9Oi" secondAttribute="bottom" constant="20" id="RXK-js-HfP"/>
+                            <constraint firstItem="c0C-of-mGR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WRR-E1-9Ai"/>
+                            <constraint firstItem="Xvk-S3-m4m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c9R-gj-bo0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GgS-uH-mN3" secondAttribute="trailing" constant="30" id="e1b-lg-khD"/>
+                            <constraint firstItem="Xvk-S3-m4m" firstAttribute="top" secondItem="GgS-uH-mN3" secondAttribute="bottom" constant="8" id="fXu-Kb-Bxx"/>
                             <constraint firstItem="wVL-MW-9Oi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kWa-Hy-KA8"/>
-                            <constraint firstItem="2DI-BN-ck5" firstAttribute="top" secondItem="wVL-MW-9Oi" secondAttribute="bottom" constant="40" id="qCN-WI-kRr"/>
+                            <constraint firstItem="GgS-uH-mN3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="tJ1-d5-zjb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2z1-WW-ldi"/>
+                    <connections>
+                        <outlet property="commandTextView" destination="GgS-uH-mN3" id="UYb-Kk-NJf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="135"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="134.59821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="C10-Rg-psL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6F3-bd-HVc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="maA-Kx-OLT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dl5-oI-HWH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X72-R2-qct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
         </scene>
     </scenes>
 </document>

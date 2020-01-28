@@ -10,6 +10,8 @@ import ExternalAccessory
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var commandTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -18,12 +20,21 @@ class ViewController: UIViewController {
     private let protocolString = "com.lego.les"
     private var connectedSession: EASession?
     
-    private func connectedAccessory() -> EAAccessory? {
-        return EAAccessoryManager.shared().connectedAccessories.first(where: { $0.protocolStrings.contains(protocolString) } )
+    private func openAccessoryPicker() {
+        // １．MFi認定を受けているBluetoothデバイスを接続する
+        EAAccessoryManager.shared().showBluetoothAccessoryPicker(withNameFilter: nil, completion: { [weak self] (error) in
+            guard error == nil else { return }
+            self?.openSessionWithConnectedAccessory()
+        })
     }
     
-    private func connect(accessory: EAAccessory) {
+    private func openSessionWithConnectedAccessory() {
+        // ２．該当の通信プロトコルをサポートしている接続済みデバイスを探す
+        guard let accessory = EAAccessoryManager.shared().connectedAccessories.first(where: { $0.protocolStrings.contains(protocolString) } ) else { return }
+        
+        // ３．通信プロトコルを指定してセッションを開く
         guard let session = EASession(accessory: accessory, forProtocol: protocolString) else { return }
+        
         session.outputStream?.schedule(in: .current, forMode: .default)
         session.outputStream?.open()
         
@@ -38,26 +49,26 @@ class ViewController: UIViewController {
         
         data.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) -> Void in
             if let bytes = buffer.bindMemory(to: UInt8.self).baseAddress {
+                // ４．セッションの出力ストリームにバイト列を送信する
                 outputStream.write(bytes, maxLength: buffer.count)
             }
         }
     }
     
     @IBAction func openButtonPushed(_ sender: Any) {
-        if let accessary = connectedAccessory() {
-            connect(accessory: accessary)
-        } else {
-            EAAccessoryManager.shared().showBluetoothAccessoryPicker(withNameFilter: nil, completion: { [weak self] (error) in
-                guard error == nil else { return }
-                
-                if let accessary = self?.connectedAccessory() {
-                    self?.connect(accessory: accessary)
-                }
-            })
-        }
+        //openAccessoryPicker()
+        openSessionWithConnectedAccessory()
     }
     
     @IBAction func streamingButtonPushed(_ sender: Any) {
         sendCommand(#"{"m":"program_modechange","p":{"mode":"play"}}"#)
+    }
+    
+    @IBAction func downloadButtonPushed(_ sender: Any) {
+        sendCommand(#"{"m":"program_modechange","p":{"mode":"download"}}"#)
+    }
+    
+    @IBAction func sendButtonPushed(_ sender: Any) {
+        sendCommand(commandTextView.text)
     }
 }
