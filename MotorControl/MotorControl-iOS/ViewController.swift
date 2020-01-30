@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     private var speed: Int = 0
     
     private func openAccessoryPicker() {
-        // １．MFi認定を受けているBluetoothデバイスを接続する
         EAAccessoryManager.shared().showBluetoothAccessoryPicker(withNameFilter: nil, completion: { [weak self] (error) in
             guard error == nil else { return }
             self?.openSessionWithConnectedAccessory()
@@ -32,10 +31,8 @@ class ViewController: UIViewController {
     }
     
     private func openSessionWithConnectedAccessory() {
-        // ２．該当の通信プロトコルをサポートしている接続済みデバイスを探す
         guard let accessory = EAAccessoryManager.shared().connectedAccessories.first(where: { $0.protocolStrings.contains(protocolString) } ) else { return }
         
-        // ３．通信プロトコルを指定してセッションを開く
         guard let session = EASession(accessory: accessory, forProtocol: protocolString) else { return }
         
         session.outputStream?.schedule(in: .current, forMode: .default)
@@ -55,11 +52,10 @@ class ViewController: UIViewController {
         
         guard var data = command.data(using: .utf8) else { return }
         
-        data.append(0x0d) // 末尾に \r を追加
+        data.append(0x0d) // Append "\r"
         
         data.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) -> Void in
             if let bytes = buffer.bindMemory(to: UInt8.self).baseAddress {
-                // ４．セッションの出力ストリームにバイト列を送信する
                 outputStream.write(bytes, maxLength: buffer.count)
             }
         }
@@ -98,7 +94,7 @@ extension ViewController: StreamDelegate {
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
         switch eventCode {
         case .openCompleted:
-            print(aStream, "openCompleted")
+            print(aStream, ".openCompleted")
             
         case .hasSpaceAvailable:
             print(aStream, ".hasSpaceAvailable")
