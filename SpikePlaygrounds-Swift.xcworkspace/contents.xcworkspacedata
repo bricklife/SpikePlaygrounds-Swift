@@ -4,4 +4,7 @@
    <FileRef
       location = "group:SendCommand/SendCommand.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:MotorControl/MotorControl.xcodeproj">
+   </FileRef>
 </Workspace>
